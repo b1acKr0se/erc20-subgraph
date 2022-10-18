@@ -1,4 +1,4 @@
-specVersion: 0.0.2
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -12,11 +12,11 @@ dataSources:
     network: mainnet
     source:
       abi: TokenRegistry
-      address: '0x7f751820be4b1e44464268c425af6095995e045a'
+      address: "0x7f751820be4b1e44464268c425af6095995e045a"
       startBlock: 75563
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.4
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/registry.ts
       entities:
@@ -27,8 +27,8 @@ dataSources:
         - name: ERC20
           file: ./abis/ERC20.json
       eventHandlers:
-        - event: 'Unknown(indexed bytes,indexed bytes)'
-          topic0: '0xa9e319c3b10db96c5cee4bc3ebffa9c5581f222f14a4deb0df7ec2088ccd0974'
+        - event: "Unknown(indexed bytes,indexed bytes)"
+          topic0: "0xa9e319c3b10db96c5cee4bc3ebffa9c5581f222f14a4deb0df7ec2088ccd0974"
           handler: initRegistry
 templates:
   # These data sources templates exist to support the different flags that a token could specify
@@ -39,7 +39,7 @@ templates:
       abi: ERC20
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.4
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/token.ts
       entities:
@@ -57,7 +57,7 @@ templates:
       abi: Burnable
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.4
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/token.ts
       entities:
@@ -75,7 +75,7 @@ templates:
       abi: Mintable
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.4
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/token.ts
       entities:
@@ -93,7 +93,7 @@ templates:
       abi: Pausable
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.4
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/mappings/token.ts
       entities:
